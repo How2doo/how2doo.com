@@ -1,0 +1,177 @@
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+}
+.sf-menu li {
+    position: relative;
+}
+.sf-menu ul {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+}
+.sf-menu > li {
+    float: left;
+}
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+    display: block;
+}
+
+.sf-menu a {
+    display: block;
+    position: relative;
+}
+.sf-menu ul ul {
+    top: 0;
+    left: 100%;
+}
+
+
+/***  SKIN ***/
+.sf-menu {
+    float: right;
+    margin-bottom: 1em;
+}
+.sf-menu ul {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2);    
+    min-width: 210px; /* allow long menu items to determine submenu width */
+    *width: 12em; /* no auto sub width for IE7, see white-space comment below */
+
+
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+
+}
+.sf-menu a {
+    text-decoration: none;
+    zoom: 1; /* IE7 */
+}
+.sf-menu li > a {
+    outline: 0;
+    text-transform: capitalize;
+    position: relative;
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #292929;
+    text-transform: uppercase;
+    padding: 0 25px 0 0 !important;
+    line-height: 60px;
+
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+.sf-menu li {
+    white-space: nowrap; /* no need for Supersubs plugin */
+    *white-space: normal; /* ...unless you support IE7 (let it wrap) */
+    -webkit-transition: background .2s;
+    transition: background .2s;
+}
+.sf-menu ul li, .sf-menu ul ul li {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #292929;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 0px 14px !important;
+}
+.sf-menu ul li:hover, .sf-menu ul ul li:hover{
+    background: #F8F8F8;
+}
+.sf-menu ul li a, .sf-menu ul ul li a{
+    padding: 0 25px 0 0 !important;
+    line-height: 45px;
+}
+.sf-menu ul li a:hover, .sf-menu ul ul li a:hover{
+    color: #292929;
+}
+ 
+/*** arrows (for all except IE7) **/
+.sf-arrows .sf-with-ul {
+    padding-right: 2.5em;
+    *padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
+}
+/* styling for both css and generated arrows */
+.sf-arrows .sf-with-ul:after {
+    font-size: 9px;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: 25px;
+    vertical-align: 10%;
+    background-image: none;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    margin-top: 0;
+    font-family: 'FontAwesome';
+    content: "\f078";
+
+    top: 50%;
+    right: 1px;
+    margin-left:8px;
+}
+/* styling for right-facing arrows */
+.sf-arrows ul .sf-with-ul:after {
+    margin-top: -5px;
+    margin-right: -13px;
+
+    font-size: 9px;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: 25px;
+    vertical-align: 10%;
+    background-image: none;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    margin-top: 0;
+    font-family: 'FontAwesome';
+    content: "\f054";
+    margin-left:8px;
+}
+
+/** Centered Menu **/
+.menu-center{
+    text-align: center;
+}
+.menu-center.whitebg{
+    background: #ffffff;
+    height: 60px;
+    margin-top: 2px;
+}
+.menu-center .sf-menu{
+    float: none;
+    margin: auto;
+    height: 100%;
+    display: inline-block;
+}
+.menu-center .sf-menu li ul{
+    text-align: left;
+}
+
+

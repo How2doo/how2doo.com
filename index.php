@@ -2,7 +2,7 @@
 //session_set_cookie_params(0, '/', '.$site_url');
 session_start();
 include('system/setting.php');
-//include('system/database.php');
+include('system/database.php');
 include('system/function.php');
 
 /*

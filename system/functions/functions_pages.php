@@ -28,7 +28,7 @@ function curPageURL() {
  if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
  $pageURL .= "://";
  if ($_SERVER["SERVER_PORT"] != "80") {
-  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"]."/how2doo";
+  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"]."/how2doo.com";
   //$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
  } else {
   $pageURL .= $_SERVER["SERVER_NAME"];
@@ -39,10 +39,10 @@ function curPageURL() {
 
 $path_info = parse_path();
 //echo '<pre>'.print_r($path_info, true).'</pre>';
-$dir= curPageURL()."/assets";
-$url= curPageURL()."/";
+$dir= curPageURL()."/$site_domain/site/assets";
+$url= curPageURL()."/$site_domain/site";
 $url2= curPageURL();
-$urlimg = curPageURL();
+$urlimg = curPageURL()."/$site_domain/site";
 $urlweb = "http://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 $token = urlencode($urlweb);
 //$urlimg = "http://".$_SERVER["SERVER_NAME"]."/pretty/";

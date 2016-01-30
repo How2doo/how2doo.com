@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect("database_host","database_username","database_password","database");
+$connect = mysqli_connect("localhost","root","","how2doo_db");
 
 // Check connection
 if (mysqli_connect_errno())

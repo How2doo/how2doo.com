@@ -1,4 +1,4 @@
 <?php
-include "models/post.php";
+include "site/models/post.php";
 
 ?>

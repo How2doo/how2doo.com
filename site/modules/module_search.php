@@ -1,4 +1,4 @@
-<section class="homepage personal-homepage parallax" style="background:url(images/backgrounds/bg12.jpg); >
+<section class="homepage personal-homepage parallax" style="background:url(<?php echo $urlimg;?>/images/backgrounds/bg12.jpg); >
         <div class="overlay"></div><!-- overlay -->
 
         <div class="aboutme" style="margin-top:140px;">

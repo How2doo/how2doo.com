@@ -1,16 +1,16 @@
 <?php 
 	ob_start();
 	include "@areaback/include/config.php";
-	require "functions/functions_substr.php";
-	require "functions/functions_array.php";
-	require "functions/functions_banner.php";
-	require "functions/functions_checkuser.php";
-	require "functions/functions_cog.php";
-	require "functions/functions_counter.php";
-	require "functions/functions_date.php";
-	require "functions/functions_navipage.php";
-	require "functions/functions_pages.php";
-	require "functions/functions_rating.php";
+	require "system/functions/functions_substr.php";
+	require "system/functions/functions_array.php";
+	require "system/functions/functions_banner.php";
+	require "system/functions/functions_checkuser.php";
+	require "system/functions/functions_cog.php";
+	require "system/functions/functions_counter.php";
+	require "system/functions/functions_date.php";
+	require "system/functions/functions_navipage.php";
+	require "system/functions/functions_pages.php";
+	require "system/functions/functions_rating.php";
 ?>
 
 <!doctype html>

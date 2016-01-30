@@ -22,7 +22,7 @@
                                 </ul>
 
                                 <div class="attachement-post overlay-img" style="height: 212px; overflow: hidden;">
-                                    <img src="images/blog/<?php echo $repost->post_cover;?>" alt="">
+                                    <img src="<?php echo $urlimg;?>/images/blog/<?php echo $repost->post_cover;?>" alt="">
                                 </div><!--/ Attachement -->
 
                             </div><!-- top post -->
@@ -33,7 +33,7 @@
 
                                 <ul class="metas">
                                     <li>
-                                        <div class="user-avatar-small"><img src="images/profile.png" alt=""></div>
+                                        <div class="user-avatar-small"><img src="<?php echo $urlimg;?>/images/profile.png" alt=""></div>
                                         <a href="#" title="">Salah Raddaoui</a>
                                     </li>
                                     <li><i class="fa fa-clock-o"></i> <?php echo convertdate($repost->post_datetime);?></li>
@@ -51,11 +51,11 @@
 
                                 <div class="attachement-post postgallery-slider">
                                     <!-- item 1 -->
-                                    <div class="item"><img src="images/blog/blog-img21.jpg" alt=""></div>
+                                    <div class="item"><img src="<?php echo $urlimg;?>/images/blog/blog-img21.jpg" alt=""></div>
                                     <!-- item 2 -->
-                                    <div class="item"><img src="images/blog/blog-img22.jpg" alt=""></div>
+                                    <div class="item"><img src="<?php echo $urlimg;?>/images/blog/blog-img22.jpg" alt=""></div>
                                     <!-- item 3 -->
-                                    <div class="item"><img src="images/blog/blog-img24.jpg" alt=""></div>
+                                    <div class="item"><img src="<?php echo $urlimg;?>/images/blog/blog-img24.jpg" alt=""></div>
                                 </div><!--/ Attachement -->
 
                             </div><!-- top post -->
@@ -67,7 +67,7 @@
 
                                 <ul class="metas">
                                     <li>
-                                        <div class="user-avatar-small"><img src="images/profile.png" alt=""></div>
+                                        <div class="user-avatar-small"><img src="<?php echo $urlimg;?>/images/profile.png" alt=""></div>
                                         <a href="#" title="">Salah Raddaoui</a>
                                     </li>
                                     <li><i class="fa fa-clock-o"></i> 10 March 2015</li>
@@ -95,7 +95,7 @@
 
                                 <ul class="metas">
                                     <li>
-                                        <div class="user-avatar-small"><img src="images/profile.png" alt=""></div>
+                                        <div class="user-avatar-small"><img src="<?php echo $urlimg;?>/images/profile.png" alt=""></div>
                                         <a href="#" title="">Salah Raddaoui</a>
                                     </li>
                                     <li><i class="fa fa-clock-o"></i> 10 March 2015</li>

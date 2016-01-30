@@ -147,86 +147,6 @@ function wordvar($wordvar){
 
 
 
-//check user login check member from database  success 
-function doLogin()
-{
-	$connect=Database();
-	include("setting-jinuemall.php");
-	// if we found an error save the error message in this variable
-	$errorMessage = '';
-	
-	//$userName = $_POST['txtUserName'];
-	//$password = $_POST['txtPassword'];
-    isset($_REQUEST['txtUserName'])?$username = $_REQUEST['txtUserName'] : $username=null;
-	isset($_REQUEST['txtPassword'])?$password = encode($_REQUEST['txtPassword'],$private_key) : $password=null;
-	isset($_REQUEST['remember'])?$remember = $_REQUEST['remember'] : $remember=null;
-	
-    //$mdpass = encode($password,$private_key);
-	
-	// first, make sure the username & password are not empty
-	if ($username == '') {
-		$errorMessage = 'Please To Check Username';
-	} else if ($password == '') {
-		$errorMessage = 'Please To Check Password';
-	} else {
-		// check the database and see if the username and password combo do match
-		
-		$sql = "SELECT member_id,member_username 
-				FROM members
-				WHERE member_username = '$username' AND member_password = '$password'  ";
-		$query = mysqli_query($connect,$sql);
-		$numrow = mysqli_num_rows($query);
-		if($numrow == 1){
-			$row = mysqli_fetch_object($query);
-			$_SESSION['me_login'] = $row->member_id;
-			
-			// log the time when the user last login
-			$sqlupdate = mysqli_query("UPDATE member
-			        SET last_login = NOW() 
-					WHERE member_id = '{$row->member_id}'");
-			
-			if ($remember==true){
-				setcookie('login_username',$username,time()+60);
-				setcookie('login_password',$password,time()+60);
-			}else{
-				setcookie('login_username',$username);
-				setcookie('login_password',$password);
-			}	
-			// now that the user is verified we move on to the next page
-            // if the user had been in the admin pages before we move to
-			// the last page visited
-			if (isset($_SESSION['login_return_url'])) {
-				header('Location: ' . $_SESSION['login_return_url']);
-				exit;
-			} else {
-				//print $_SESSION['member_id'];
-				header("Location: $site_url");
-				exit;
-			}
-		}else{
-			$errorMessage = 'Wrong Username and Password';
-		}		
-			
-	}
-	return $errorMessage;
-	
-}
-
-/*
-	Logout a user
-*/
-function doLogout()
-{
-	include("setting-jinuemall.php");
-	if (isset($_SESSION['me_login'])) {
-		unset($_SESSION['me_login']);
-		session_unset('me_login');
-	}
-		
-	header("Location: $site_url");
-	exit;
-}
-//end set function checkuser
 
 
 //function get country new by pu 18/01/59
@@ -237,17 +157,5 @@ function getcountry($ipaddress){
 	$result = mysqli_fetch_object($query);
 	
 	return $result->country_code;
-}
-
-function truncateStr($str, $maxChars, $holder="...."){
-
-    // ตรวจสอบความยาวของประโยค
-    if (strlen($str) > $maxChars ){
-        return strip_tags(trim(mb_substr($str, 0, $maxChars,'UTF-8'))) . $holder;
-    }   else {
-        return strip_tags($str);
-    }
-    
-    //by puwanath baibua kapongidea.com
 }
 ?>
